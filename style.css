@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* NAVBAR */
+
+nav {
+    background: linear-gradient(135deg, #3a0ca3, #7209b7);
+    color: white;
+    height: 65px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+/* BODY BACKGROUND */
+
+body {
+    background: linear-gradient(135deg, #f3e8ff, #e0c3fc);
+    min-height: 100vh;
+}
+
+/* MAIN CONTAINER */
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+/* GAME GRID */
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 120px);
+    grid-template-columns: repeat(3, 120px);
+    position: relative;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.box {
+    border: 2px solid #333;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease;
+    font-weight: 600;
+}
+
+.box:hover {
+    background-color: #f1e4ff;
+    transform: scale(1.05);
+}
+
+/* REMOVE EXTRA BORDERS */
+
+.br-0 { border-right: 0; }
+.bl-0 { border-left: 0; }
+.bt-0 { border-top: 0; }
+.bb-0 { border-bottom: 0; }
+
+/* INFO SECTION */
+
+.gameInfo {
+    padding: 25px;
+    max-width: 280px;
+}
+
+.gameInfo h1 {
+    margin-bottom: 20px;
+    color: #3a0ca3;
+}
+
+.Info {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* RESET BUTTON */
+
+#reset {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff006e, #ff4d6d);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    transition: 0.25s ease;
+}
+
+#reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* WIN GIF */
+
+.imgbox img {
+    width: 0;
+    transition: width 0.6s ease-in-out;
+    margin-top: 20px;
+}
+
+/* WIN LINE */
+
+.line {
+    background-color: red;
+    width: 0;
+    height: 6px;
+    position: absolute;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* 📱 RESPONSIVE */
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-rows: repeat(3, 90px);
+        grid-template-columns: repeat(3, 90px);
+    }
+
+    .box {
+        font-size: 2rem;
+    }
+
+    .gameContainer {
+        gap: 30px;
+        margin-top: 30px;
+    }
+}
